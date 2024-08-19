@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.info">
+
+        <div class="container min-vh-100 d-flex flex-column py-5">
+            <div class="row">
+                <div class="col-md-12 d-flex">
+                    <button type="button" t-on-click="switchToHome">&lt;- Back</button>
+                </div>
+            </div>
+
+            <div class="row flex-grow-1 d-flex align-items-center justify-content-center m-5 p-5">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="fs-2 fw-bold">Who are you?</h1>
+                    </div>
+                </div>
+
+                <div class="form-group row d-flex">
+                    <label>Your Name *</label><br/>
+                    <input class="p-2" type="text" t-model="state.name" placeholder="Your Name"/>
+                </div>
+                <div class="form-group row d-flex">
+                    <label>Your Phone Number *</label><br/>
+                    <input class="p-2" type="text" t-model="state.phone" placeholder="Your Phone Number"/>
+                </div>
+                <div class="form-group row d-flex">
+                    <label>Your Company</label><br/>
+                    <input class="p-2" type="text" t-model="state.company" placeholder="e.g. My Company"/>
+                </div>
+
+                <button class="btn btn-primary btn-lg" t-on-click="saveVisitorInfo">Check In</button>
+
+<!--                <t t-if="state.host_selection">-->
+<!--                    <button class="btn btn-primary btn-lg" t-on-click="switchToHost">Check In</button>-->
+<!--                </t>-->
+
+<!--                <t t-if="! state.host_selection">-->
+<!--                    <button class="btn btn-primary btn-lg" t-on-click="switchToDrink">Check In</button>-->
+<!--                </t>-->
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </t>
+
+</templates>

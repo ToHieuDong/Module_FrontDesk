@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.app">
+        <div>
+            <t t-if="state.currentComponent === 'home'">
+                <Home t-props="props, {switchToInfo: switchToInfo}"/>
+            </t>
+            <t t-if="state.currentComponent === 'info'">
+                <Info t-props="props, {switchToHome: switchToHome, switchToHost: switchToHost, switchToDrink: switchToDrink}"/>
+            </t>
+            <t t-if="state.currentComponent === 'host'">
+                <Host t-props="props, {switchToInfo: switchToInfo, switchToDrink: switchToDrink}"/>
+            </t>
+            <t t-if="state.currentComponent === 'drink'">
+                <Drink t-props="props, {switchToDrinkService: switchToDrinkService, switchToThankYou: switchToThankYou}"/>
+            </t>
+            <t t-if="state.currentComponent === 'drinkservice'">
+                <DrinkService t-props="props, {switchToThankYou: switchToThankYou}"/>
+            </t>
+            <t t-if="state.currentComponent === 'thankyou'">
+                <ThankYou t-props="props, {switchToHome: switchToHome}"/>
+            </t>
+        </div>
+    </t>
+
+</templates>

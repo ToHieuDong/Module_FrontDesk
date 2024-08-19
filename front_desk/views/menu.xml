@@ -1,0 +1,168 @@
+<odoo>
+  <data>
+
+    <!-- Định nghĩa các view -->
+    <!-- Visitors List View -->
+    <record model="ir.ui.view" id="visitors_view">
+      <field name="name">Visitors</field>
+      <field name="model">front_desk.visitor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="visitor_company"/>
+          <field name="phone"/>
+          <field name="drink" widget="badge"/>
+          <field name="host" widget="many2one_avatar"/>
+          <field name="check_in"  />
+          <field name="duration"/>
+          <field name="station"/>
+          <field name="status" decoration-success="status == 'checked_in'" widget="badge"/>
+          <field name="drink_served" invisible="1"/>
+          <button name="action_delete_record" type="object" string="Check out" class="btn-info" />
+
+          <button name="action_serve_drink" type="object" string="Drink Served" class="btn-primary" invisible="drink_served"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Stations Form View -->
+    <record model="ir.ui.view" id="stations_view">
+      <field name="name">Stations</field>
+      <field name="model">front_desk.station</field>
+      <field name="arch" type="xml">
+        <form string="Frontdesk Name" style="overflow: hidden; height: 60%;">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="responsibles" widget="many2one_avatar"/>
+                <field name="company_id"/>
+                <field name="kiosk_url" widget="CopyClipboardChar"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Options">
+                <div class="options-group">
+                  <group>
+                    <field name="host_selection"/>
+                    <field name="authenticate_guest"/>
+                  </group>
+                  <group>
+                    <field name="email_required" widget="radio"/>
+                    <field name="phone_required" widget="radio"/>
+                    <field name="organization_required" widget="radio"/>
+                  </group>
+                  <group>
+                    <field name="notify_email"/>
+                    <field name="notify_sms"/>
+                    <field name="notify_discuss"/>
+                  </group>
+                  <group>
+                    <field name="offer_drinks"/>
+<!--                    <field name="drinks" widget="many2many_tags"/>-->
+                    <field name="theme" widget="radio"/>
+                  </group>
+                </div>
+              </page>
+              <page string="Side Message">
+                <!-- Thêm nội dung của tab Side Message -->
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!--    kanbanview-->
+
+    <record id="stations_view_kanban" model="ir.ui.view">
+      <field name="name">kanban.Stations</field>
+      <field name="model">front_desk.station</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name"/>
+          <field name="responsibles"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_global_click">
+                <div class="row">
+                  <div class="col-2">
+                    <strong>
+                      <field name="theme" widget="priority"/>
+                    </strong>
+                  </div>
+
+                  <div class="col-8">
+                    <strong>
+                      <field name="name"/>
+                    </strong>
+                  </div>
+
+                  <div class="o_dropdown_kanban dropdown col-2">
+                    <a class="dropdown-toggle o-no-caret btn"
+                       data-toggle="dropdown" href="#" aria-label="Dropdown menu"
+                       title="Dropdown menu">
+                      <span class="fa fa-ellipsis-v"/>
+                    </a>
+                    <div class="dropdown-menu">
+                      <t t-if="widget.editable">
+                        <a type="edit" class="dropdown-item">Edit
+                        </a>
+                      </t>
+                      <t t-if="widget.deletable">
+                        <a type="delete" class="dropdown-item">
+                          Delete
+                        </a>
+                      </t>
+                    </div>
+                  </div>
+
+
+
+
+                </div>
+              </div>
+
+
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Định nghĩa các hành động -->
+    <!-- Visitors Action -->
+    <record model="ir.actions.act_window" id="action_visitors">
+      <field name="name">Visitors</field>
+      <field name="res_model">front_desk.visitor</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="visitors_view"/>
+    </record>
+
+    <!-- Stations Action -->
+    <record model="ir.actions.act_window" id="action_stations">
+      <field name="name">Station</field>
+      <field name="res_model">front_desk.station</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_id" ref="stations_view"/>
+    </record>
+
+    <record id="action_stations" model="ir.actions.act_window">
+      <field name="name">Station</field>
+      <field name="res_model">front_desk.station</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_id" ref="stations_view_kanban"/>
+    </record>
+
+
+    <!-- Các mục menu -->
+    <menuitem name="FrontDesk" id="menu_root" sequence="10"/>
+
+    <menuitem name="Stations" id="menu_Stations" action="action_stations" parent="menu_root" sequence="10"/>
+    <menuitem name="Visitors" id="menu_Visitors" action="action_visitors" parent="menu_root" sequence="10"/>
+    <menuitem name="Reporting" id="menu_Reporting" action="action_visitors" parent="menu_root" sequence="10"/>
+    <menuitem name="Configuration" id="menu_Configuration" action="action_visitors" parent="menu_root" sequence="10"/>
+
+  </data>
+</odoo>

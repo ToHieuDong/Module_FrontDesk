@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="index" name="Home">
+        <t t-call="website.layout">
+            <t t-set="no_header" t-value="true"/>
+            <t t-set="no_footer" t-value="true"/>
+
+            <owl-component name="front_desk.app" t-att-props="station"/>
+
+<!--            <owl-component name="front_desk.home" t-att-props="station"/>-->
+<!--            <owl-component name="front_desk.info" t-att-props="station"/>-->
+
+
+
+        </t>
+    </template>
+</odoo>
+

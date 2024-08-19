@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.language">
+        <div class="">
+            <select class="form-select" aria-label="Language select" t-att-value="state.selectedLang" t-on-change="onLanguageChange">
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">Tiếng Anh</option>
+                <option value="fr">Tiếng Pháp</option>
+                <option value="ja">Tiếng Nhật</option>
+                <option value="it">Tiếng Ý</option>
+            </select>
+        </div>
+    </t>
+
+</templates>
