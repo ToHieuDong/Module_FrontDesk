@@ -14,10 +14,26 @@ export class App extends Component {
     static template = "front_desk.app";
     static components  = { Home, Info, Host, Drink, DrinkService, ThankYou };
     setup() {
-        console.log('Station value:', this.props);
+        console.log('Station value: App', this.props);
+
         this.state = useState({
             currentComponent: 'home',
+            theme: this.props.theme || 'light',
+            visitor_data : {
+                'name': '',
+                'visitor_company': '',
+                'phone': '',
+                'drink': '',
+                'host': {},
+                'check_in': null,
+                'duration': 0.0,
+                'station': '',
+                'status': 'pending',
+                'drink_served': false
+            }
         });
+
+        console.log('Station value: App', this.state.visitor_data);
 
         this.switchToInfo = this.switchToInfo.bind(this);
         this.switchToHome = this.switchToHome.bind(this);

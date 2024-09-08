@@ -2,3 +2,4 @@
 
 from . import visitors
 from . import stations
+from . import drink

@@ -2,7 +2,7 @@
 {
     'name': "FrontDesk",
 
-    'summary': "A check-in app records the time and location of users attending events or working, aiding in management and tracking efficiency.",
+    'summary': "Abc check-in app records the time and location of users attending events or working, aiding in management and tracking efficiency.",
 
     'description': """
 A check-in app designed to streamline the process of recording time and location for users attending events or workplaces. With features like easy login, real-time check-in/check-out, event management, reminders, and detailed reporting, this app enhances efficiency and accuracy in tracking attendance and participation. Ideal for businesses, event organizers, and HR departments, it simplifies management and ensures precise data collection for analysis and decision-making.

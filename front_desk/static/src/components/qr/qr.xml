@@ -4,7 +4,7 @@
     <t t-name="front_desk.qr">
         <div class="d-flex justify-content-center">
             <t t-if="qrCodeUrl">
-                <img class="p-1 border border-primary rounded" t-att-src="'/report/barcode/QR/'+qrCodeUrl" style="height:150px; width:150px;" alt="QR Code"/>
+                <img class="p-2 border border-primary rounded" t-att-src="'/report/barcode/QR/'+qrCodeUrl" style="height:200px; width:200px; background-color: #ffffff" alt="QR Code"/>
             </t>
 
         </div>

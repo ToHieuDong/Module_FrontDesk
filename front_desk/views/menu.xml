@@ -1,6 +1,63 @@
 <odoo>
   <data>
 
+    <record id="drinks_kanban_view" model="ir.ui.view">
+      <field name="name">front_desk.drinks.kanban</field>
+      <field name="model">front_desk.drink</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column" string="Drinks Kanban">
+          <field name="drink_name"/>
+          <field name="drink_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click o_kanban_record">
+                <div class="row">
+                  <div class="col-4">
+                    <field name="drink_image" widget="image" class="img img-fluid o_kanban_image"/>
+                  </div>
+                  <div class="col-8 d-flex align-items-center">
+                    <strong>
+                      <field name="drink_name"/>
+                    </strong>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+<!--    report view -->
+
+
+<!--    <record id="drinks_view" model="ir.ui.view">-->
+<!--      <field name="name">Drinks</field>-->
+<!--      <field name="model">front_desk.drink</field>-->
+<!--      <field name="arch" type="xml">-->
+<!--        <tree string="Drink List">-->
+<!--          <field name="drink_name"/>-->
+<!--          <field name="drink_image" widget="image"/>-->
+<!--        </tree>-->
+<!--      </field>-->
+<!--    </record>-->
+
+    <record id="drinks_form" model="ir.ui.view">
+      <field name="name">front_desk.form</field>
+      <field name="model">front_desk.drink</field>
+      <field name="arch" type="xml">
+        <form string="Drink Form">
+          <sheet>
+            <group>
+              <field name="drink_name"/>
+              <field name="drink_image" widget="image"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <!-- Định nghĩa các view -->
     <!-- Visitors List View -->
     <record model="ir.ui.view" id="visitors_view">
@@ -17,9 +74,8 @@
           <field name="duration"/>
           <field name="station"/>
           <field name="status" decoration-success="status == 'checked_in'" widget="badge"/>
-          <field name="drink_served" invisible="1"/>
+          <field name="drink_served" invisible="1" column_invisible="1"/>
           <button name="action_delete_record" type="object" string="Check out" class="btn-info" />
-
           <button name="action_serve_drink" type="object" string="Drink Served" class="btn-primary" invisible="drink_served"/>
         </tree>
       </field>
@@ -37,41 +93,62 @@
                 <field name="name"/>
                 <field name="responsibles" widget="many2one_avatar"/>
                 <field name="company_id"/>
-                <field name="kiosk_url" widget="CopyClipboardChar"/>
+<!--                <field name="kiosk_url" widget="CopyClipboardChar"/>-->
+                <field name="kiosk_url" widget="CopyClipboardURL"/>
               </group>
             </group>
             <notebook>
               <page string="Options">
                 <div class="options-group">
-                  <group>
-                    <field name="host_selection"/>
-                    <field name="authenticate_guest"/>
-                  </group>
-                  <group>
-                    <field name="email_required" widget="radio"/>
-                    <field name="phone_required" widget="radio"/>
-                    <field name="organization_required" widget="radio"/>
-                  </group>
-                  <group>
-                    <field name="notify_email"/>
-                    <field name="notify_sms"/>
-                    <field name="notify_discuss"/>
-                  </group>
-                  <group>
-                    <field name="offer_drinks"/>
-<!--                    <field name="drinks" widget="many2many_tags"/>-->
-                    <field name="theme" widget="radio"/>
-                  </group>
+                  <div class="row">
+                    <!-- Cột 1 -->
+                    <div class="col-md-6">
+                      <group>
+<!--                        <field name="host_selection"/>-->
+                        <field name="authenticate_guest"/>
+                      </group>
+                      <group invisible="not authenticate_guest">
+                        <field name="email_required" widget="radio"/>
+                        <field name="phone_required" widget="radio"/>
+                        <field name="organization_required" widget="radio"/>
+                      </group>
+                    </div>
+                    <!-- Cột 2 -->
+                    <div class="col-md-6">
+                      <group>
+                        <field name="host_selection"/>
+<!--                        <field name="authenticate_guest"/>-->
+                      </group>
+                      <group invisible="not host_selection" style="margin-left: 20px;">
+                        <field name="notify_email"/>
+                        <field name="notify_sms"/>
+                        <field name="notify_discuss"/>
+                      </group>
+                      <group>
+                        <field name="offer_drinks"/>
+                        <field name="drinks" widget="many2many_tags" options="{'no_create': True}" invisible="not offer_drinks"/>
+                        <field name="theme" widget="radio"/>
+                      </group>
+                    </div>
+                  </div>
                 </div>
               </page>
               <page string="Side Message">
                 <!-- Thêm nội dung của tab Side Message -->
+                <div class="options-group">
+                  <group>
+                    <field name="message" widget="text" placeholder="Enter notes here..."/>
+                  </group>
+                </div>
               </page>
             </notebook>
           </sheet>
         </form>
       </field>
     </record>
+
+
+
 
 
 <!--    kanbanview-->
@@ -99,24 +176,6 @@
                     </strong>
                   </div>
 
-                  <div class="o_dropdown_kanban dropdown col-2">
-                    <a class="dropdown-toggle o-no-caret btn"
-                       data-toggle="dropdown" href="#" aria-label="Dropdown menu"
-                       title="Dropdown menu">
-                      <span class="fa fa-ellipsis-v"/>
-                    </a>
-                    <div class="dropdown-menu">
-                      <t t-if="widget.editable">
-                        <a type="edit" class="dropdown-item">Edit
-                        </a>
-                      </t>
-                      <t t-if="widget.deletable">
-                        <a type="delete" class="dropdown-item">
-                          Delete
-                        </a>
-                      </t>
-                    </div>
-                  </div>
 
 
 
@@ -141,18 +200,32 @@
     </record>
 
     <!-- Stations Action -->
-    <record model="ir.actions.act_window" id="action_stations">
-      <field name="name">Station</field>
-      <field name="res_model">front_desk.station</field>
-      <field name="view_mode">tree,form</field>
-      <field name="view_id" ref="stations_view"/>
-    </record>
+<!--    <record model="ir.actions.act_window" id="action_stations">-->
+<!--      <field name="name">Station</field>-->
+<!--      <field name="res_model">front_desk.station</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--      <field name="view_id" ref="stations_view"/>-->
+<!--    </record>-->
 
     <record id="action_stations" model="ir.actions.act_window">
       <field name="name">Station</field>
       <field name="res_model">front_desk.station</field>
       <field name="view_mode">kanban,form</field>
       <field name="view_id" ref="stations_view_kanban"/>
+    </record>
+
+<!--    drink-->
+<!--    <record id="action_drink" model="ir.actions.act_window">-->
+<!--      <field name="name">Drinks</field>-->
+<!--      <field name="res_model">front_desk.drink</field>-->
+<!--      <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+    <record id="action_drink" model="ir.actions.act_window">
+      <field name="name">Drinks</field>
+      <field name="res_model">front_desk.drink</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_id" ref="drinks_kanban_view"/>
     </record>
 
 
@@ -163,6 +236,8 @@
     <menuitem name="Visitors" id="menu_Visitors" action="action_visitors" parent="menu_root" sequence="10"/>
     <menuitem name="Reporting" id="menu_Reporting" action="action_visitors" parent="menu_root" sequence="10"/>
     <menuitem name="Configuration" id="menu_Configuration" action="action_visitors" parent="menu_root" sequence="10"/>
+    <menuitem name="Drink" id="menu_Drink" action="action_drink" parent="menu_Configuration" sequence="10"/>
 
   </data>
+
 </odoo>

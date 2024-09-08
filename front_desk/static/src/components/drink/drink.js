@@ -11,6 +11,9 @@ export class Drink extends Component {
             drink: "",
         });
     }
+
+
+
     switchToDrinkService() {
         this.props.switchToDrinkService();  // Gọi callback để chuyển sang 'home'
     }

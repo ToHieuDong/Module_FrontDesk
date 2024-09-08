@@ -11,9 +11,26 @@ export class Home extends Component {
     static components  = { Qr, Language, Time };
     setup() {
         console.log('Station value:', this.props);  // Kiểm tra giá trị của prop
+        console.log('Station value:', this.props.visitor_data);
         this.state = useState({
             stationName: this.props.name || 'XBOSS',
+            message: this.props.message || '',
         });
+        this.state.visitorData = this.props.visitor_data;
+
+        this.state.visitor_data = {
+            'name': '',
+            'visitor_company': '',
+            'phone': '',
+            'drink': '',
+            'host': '',
+            'check_in': null,
+            'duration': 0.0,
+            'station': '',
+            'status': 'pending',
+            'drink_served': false
+        }
+
     }
 
     switchToInfo() {

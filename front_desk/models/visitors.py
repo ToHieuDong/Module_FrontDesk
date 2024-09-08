@@ -3,12 +3,11 @@
 from odoo import models, fields, api
 
 
-class visitors(models.Model):
+class Visitors(models.Model):
     _name = 'front_desk.visitor'
     _description = 'Visitors'
 
     name = fields.Char(string='Name', required=True)
-    # visitor_company = fields.Many2one('res.partner', string='Visitor Company')
     visitor_company = fields.Char(string='Visitor Company')
     phone = fields.Char(string='Phone')
     drink = fields.Char(string='Preferred Drink')
@@ -32,20 +31,10 @@ class visitors(models.Model):
 
     def action_delete_record(self):
         for record in self:
-            record.unlink()  # Xóa bản ghi hiện tại
+            record.unlink()
         return {
             'type': 'ir.actions.act_window_close',
         }
 
-    # @api.model
-    # def create_visitor_record(self, name, phone):
-    #     # Thực hiện tạo bản ghi mới trong model 'front_desk.visitor'
-    #     visitor_data = {
-    #         'name': name,
-    #         'phone': phone,
-    #     }
-    #
-    #     new_visitor = self.env['front_desk.visitor'].create(visitor_data)
-    #     return new_visitor.id
 
 

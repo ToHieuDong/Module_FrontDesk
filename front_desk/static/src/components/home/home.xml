@@ -15,6 +15,7 @@
                     <h1 class="fs-3 fw-normal"><t t-esc="state.stationName"/></h1>
 <!--                    <a href="#" class="btn btn-primary btn-lg">Check in</a>-->
                     <button class="btn btn-primary btn-lg" type="button" t-on-click="switchToInfo">Check-in</button>
+                    <h1 class="fs-3 fw-normal p-3"><t t-esc="state.message"/></h1>
                 </div>
             </div>
 
