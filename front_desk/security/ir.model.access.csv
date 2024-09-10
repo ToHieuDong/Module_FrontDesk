@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_front_desk_visitor_user,access.front_desk.visitor.user,model_front_desk_visitor,,1,1,1,1
-access_front_desk_station_user,access.front_desk.station.user,model_front_desk_station,,1,1,1,1
-access_front_desk_drink_user,access.front_desk.drink.user,model_front_desk_drink,,1,1,1,1
