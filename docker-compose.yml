@@ -1,0 +1,124 @@
+services:
+    web:
+        build:
+            context: ./docker
+            dockerfile: Dockerfile
+        command: ["/bin/sh", "-c", "trap : TERM INT; (while true; do sleep 1000; done) & wait"]
+        volumes:
+            - web-data:/var/lib/odoo:rw
+            - ./odoo.conf:/etc/odoo/odoo.conf
+            - ./extra-addons:/mnt/extra-addons
+        depends_on:
+            - db
+        ports:
+            - "5678:5678" # Using by vscode debugger
+        environment:
+            - HOST=db
+            - PORT=5432
+            - USER=odoo
+            - PASSWORD=odoo
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=proxy
+
+            - traefik.http.routers.odoo-secured.rule=Host(`${HOSTNAME:-xboss.localhost}`)
+            - traefik.http.routers.odoo-secured.entrypoints=websecure
+            # - traefik.http.routers.odoo-secured.priority=10
+            - traefik.http.routers.odoo-secured.tls=true
+            - traefik.http.routers.odoo-secured.service=odoo-secured
+            - traefik.http.services.odoo-secured.loadbalancer.server.port=8069
+            - traefik.http.services.odoo-secured.loadbalancer.passHostHeader=true
+
+            - traefik.http.routers.odoo-longpolling.rule=Host(`${HOSTNAME:-xboss.localhost}`) && PathPrefix(`/websocket`)
+            - traefik.http.routers.odoo-longpolling.entrypoints=websecure
+            - traefik.http.routers.odoo-longpolling.tls=true
+            # - traefik.http.routers.odoo-longpolling.priority=20
+            - traefik.http.routers.odoo-longpolling.service=odoo-longpolling
+            - traefik.http.services.odoo-longpolling.loadbalancer.server.port=8072
+            - traefik.http.services.odoo-longpolling.loadbalancer.passHostHeader=true
+        networks:
+            - default
+            - proxy
+        restart: always
+        cap_add:
+            - SYS_PTRACE
+    db:
+        image: postgres:12-alpine
+        environment:
+            - POSTGRES_PASSWORD=odoo
+            - POSTGRES_USER=odoo
+            - PGDATA=${POSTGRES_DATA:-/var/lib/postgresql/data/pgdata}
+        volumes:
+            - db-data:${POSTGRES_DATA:-/var/lib/postgresql/data/pgdata}
+        restart: always
+    pgadmin:
+        image: dpage/pgadmin4
+        links:
+            - db
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL:-admin@xboss.localhost}
+            - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD:-admin}
+        restart: unless-stopped
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=proxy
+            - traefik.http.routers.pgadmin-secured.rule=Host(`${DB_HOSTNAME:-db.xboss.localhost}`)
+            - traefik.http.routers.pgadmin-secured.entrypoints=websecure
+            - traefik.http.routers.pgadmin-secured.tls=true
+            - traefik.http.services.pgadmin-secured.loadbalancer.server.port=80
+        networks:
+            - default
+            - proxy
+    mailhog:
+        image: mailhog/mailhog
+        restart: unless-stopped
+        labels:
+            - traefik.enable=true
+            - traefik.docker.network=proxy
+            - traefik.http.routers.mailhog.rule=Host(`${MAIL_HOSTNAME:-mail.xboss.localhost}`)
+            - traefik.http.routers.mailhog.entrypoints=websecure
+            - traefik.http.routers.mailhog.tls=true
+            - traefik.http.services.mailhog.loadbalancer.server.port=8025
+        networks:
+            - default
+            - proxy
+    proxy:
+        image: "traefik:v2.10"
+        command:
+            - --api.insecure=true
+            - --api.dashboard=true
+            - --providers.docker=true
+            - --providers.docker.exposedbydefault=false
+            - --providers.file.filename=/traefik.config.toml
+            - --providers.file.watch=true
+            - --entrypoints.web.address=:80
+            # - --entryPoints.web.forwardedHeaders.insecure
+            - --entrypoints.web.http.redirections.entryPoint.to=websecure
+            - --entrypoints.web.http.redirections.entryPoint.scheme=https
+            - --entrypoints.websecure.address=:443
+        labels:
+            - traefik.docker.network=proxy
+            - traefik.enable=true
+            - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOSTNAME:-proxy.xboss.localhost}`)
+            - traefik.http.routers.traefik.entrypoints=websecure
+
+            - traefik.http.routers.traefik.tls=true
+            - traefik.http.services.traefik.loadbalancer.server.port=8080
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./traefik/traefik.config.toml:/traefik.config.toml
+            - ./traefik/certs:/certs
+        ports:
+            - 80:80
+            - 443:443
+        restart: unless-stopped
+        networks:
+            - proxy
+volumes:
+    db-data:
+    web-data:
+    web-bashhistory:
+networks:
+    proxy:
+        name: proxy
+        external: true

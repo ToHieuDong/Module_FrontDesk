@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.language">
+        <div class="">
+            <select class="form-select" aria-label="Language select" t-att-value="state.selectedLang" t-on-change="onLanguageChange">
+                <option value="en"><t t-esc="state.translations.english"/></option>
+                <option value="vi"><t t-esc="state.translations.vietnamese"/></option>
+                <option value="fr"><t t-esc="state.translations.french"/></option>
+                <option value="ja"><t t-esc="state.translations.japanese"/></option>
+                <option value="it"><t t-esc="state.translations.italian"/></option>
+            </select>
+        </div>
+    </t>
+
+</templates>

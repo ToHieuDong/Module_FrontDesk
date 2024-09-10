@@ -1,0 +1,4 @@
+[tls]
+  [[tls.certificates]]
+    certFile = "/certs/xboss.localhost+4.pem"
+    keyFile = "/certs/xboss.localhost+4-key.pem"

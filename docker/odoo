@@ -1,0 +1,37 @@
+#!/usr/bin/python3
+
+# set server timezone in UTC before time module imported
+__import__('os').environ['TZ'] = 'UTC'
+import odoo
+
+def check_active_debug(config):
+    dev_mode = config.get('dev_mode', []) or config.get('vscode_debug','').split(',')
+    active_debug = False
+    if 'debug' in dev_mode or 'debug-no-wait' in dev_mode:
+        active_debug = True
+
+    if active_debug and not odoo.evented:
+        try:
+            import debugpy
+            import os
+            import logging
+            import sys
+
+
+            port = int(os.environ.get('VSCODE_DEBUGGER_PORT', '5678'))
+            # Allow other computers to attach to debugpy at this IP address and port.
+            debugpy.listen(('0.0.0.0', port))
+            logging.info("Starting vscode debugger....")
+            if 'debug' in dev_mode:
+                logging.info("Waiting for vscode debugger attach.....")
+                # Pause the program until a remote debugger is attached
+                debugpy.wait_for_client()
+        except KeyboardInterrupt:
+            sys.exit(1)
+        except ImportError:
+            logging.error("Fail to start debugging: debugpy not installed.")
+
+if __name__ == "__main__":
+    odoo.tools.config.parse_config(__import__('sys').argv[1:])
+    check_active_debug(odoo.tools.config)
+    odoo.cli.main()

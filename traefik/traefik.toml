@@ -1,0 +1,9 @@
+[providers]
+  # This is how you tell traefik that it has to get the dynamic config from a config file
+  # Note that the path is the path to the file inside Docker, not insider your machine!
+  # If you want do use Docker itself for this check traefik docs!
+  [providers.file]
+    filename = "/traefik.config.toml"
+    watch = true
+
+

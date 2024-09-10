@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.host">
+
+        <div class="container min-vh-100 d-flex flex-column py-5">
+            <div class="row">
+                <div class="col-md-12 d-flex">
+                    <button class="btn btn-primary" type="button" t-on-click="switchToInfo"><i class="oi oi-arrow-left"></i> <t t-esc="state.translations.back"/></button>
+                </div>
+            </div>
+
+            <div class="row flex-grow-1 d-flex align-items-center justify-content-center m-5 p-5">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="fs-2 fw-bold"><t t-esc="state.translations.whoAreYouVisiting"/></h1>
+                    </div>
+                </div>
+
+<!--                <div class="form-group row d-flex">-->
+<!--                    <input class="p-2 form-control" type="text" t-model="state.name" placeholder="Choose a Host?"/>-->
+<!--                </div>-->
+
+                <div class="form-group row d-flex">
+                    <select class="p-2 form-control form-select" t-on-change="onHostChange">
+                        <option value="" t-att-selected='selected'><t t-esc="state.translations.chooseAHost"/></option>
+                        <t t-foreach="state.listHost" t-as="host" t-key="host.login">
+                            <option t-att-value="host.login">
+                                <t t-esc="host.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <button class="btn btn-primary btn-lg" t-on-click="saveVisitorHost"><t t-esc="state.translations.checkIn"/></button>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </t>
+
+</templates>

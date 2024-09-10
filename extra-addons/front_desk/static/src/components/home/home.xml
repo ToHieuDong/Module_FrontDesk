@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.home" owl="1">
+        <div class="container min-vh-100 d-flex flex-column py-5">
+            <div class="row">
+                <div class="col-md-12 d-flex flex-row-reverse">
+<!--                    <owl-component name="front_desk.language" />-->
+                    <Language t-props="{translations:state.translations}"/>
+                </div>
+            </div>
+            <div class="row flex-grow-1 d-flex align-items-center justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h1 class="fs-2 fw-bold"><t t-esc="state.translations.welcome"/></h1>
+                    <h1 class="fs-3 fw-normal"><t t-esc="state.stationName"/></h1>
+<!--                    <a href="#" class="btn btn-primary btn-lg">Check in</a>-->
+                    <button class="btn btn-primary btn-lg" type="button" t-on-click="switchToInfo" title="Check-in"><t t-esc="state.translations.checkIn"/></button>
+                    <h1 class="fs-3 fw-normal p-3"><t t-esc="state.message"/></h1>
+                </div>
+            </div>
+
+            <div class="row d-flex align-items-center justify-content-center" >
+                <div class="col-md-9">
+<!--                    <owl-component name="front_desk.time" />-->
+                    <Time/>
+                </div>
+
+                <div class="col-md-3">
+<!--                    <owl-component name="front_desk.qr" />-->
+                    <Qr/>
+                </div>
+            </div>
+        </div>
+    </t>
+
+</templates>

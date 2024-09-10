@@ -1,0 +1,573 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* front_desk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240721\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-09 19:51+0000\n"
+"PO-Revision-Date: 2024-09-09 19:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__authenticate_guest
+msgid "Authenticate Guest"
+msgstr "Xác thực khách"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Back"
+msgstr "Quay lại"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__cancelled
+msgid "Cancelled"
+msgstr "Hủy"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Check In"
+msgstr "Đăng ký"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.visitors_view
+msgid "Check out"
+msgstr "Trả phòng"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__check_in
+msgid "Check-In Time"
+msgstr "Thời gian đăng ký"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/home/home.xml:0
+#, python-format
+msgid "Check-in"
+msgstr "Đăng ký"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__checked_in
+msgid "Checked In"
+msgstr "Đã đăng ký"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__checked_out
+msgid "Checked Out"
+msgstr "Đã trả phòng"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#, python-format
+msgid "Choose a Host"
+msgstr "Chọn người hướng dẫn"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Close ("
+msgstr "Đóng ("
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Configuration
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__create_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__create_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__create_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__create_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__theme__dark
+msgid "Dark"
+msgstr "Tối"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__display_name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__display_name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Do you want something to drink?"
+msgstr "Bạn có muốn uống gì không?"
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Drink
+msgid "Drink"
+msgstr "Nước"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.drinks_form
+msgid "Drink Form"
+msgstr "Biểu mẫu đồ uống"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__drink_image
+msgid "Drink Image"
+msgstr "Hình ảnh đồ uống"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__drink_name
+msgid "Drink Name"
+msgstr "Tên đồ uống"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__drink_served
+#: model_terms:ir.ui.view,arch_db:front_desk.visitors_view
+msgid "Drink Served"
+msgstr "Đồ uống đã phục vụ"
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_drink
+#: model:ir.model,name:front_desk.model_front_desk_drink
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__drinks
+msgid "Drinks"
+msgstr "Đồ uống"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.drinks_kanban_view
+msgid "Drinks Kanban"
+msgstr "Kanban đồ uống"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__duration
+msgid "Duration (hours)"
+msgstr "Thời gian (giờ)"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__email_required
+msgid "Email"
+msgstr "Email"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "English"
+msgstr "Tiếng Anh"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Enter notes here..."
+msgstr "Nhập ghi chú ở đây..."
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "French"
+msgstr "Tiếng Pháp"
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_root
+msgid "FrontDesk"
+msgstr "Quầy lễ tân"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Frontdesk Name"
+msgstr "Tên quầy lễ tân"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__host
+msgid "Host"
+msgstr "Người hướng dẫn"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__host_selection
+msgid "Host Selection"
+msgstr "Chọn người hướng dẫn"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "How can we delight you?"
+msgstr "Chúng tôi có thể làm gì để làm bạn hài lòng?"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__id
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__id
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__id
+msgid "ID"
+msgstr "ID"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Italian"
+msgstr "Tiếng Ý"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Japanese"
+msgstr "Tiếng Nhật"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__kiosk_url
+msgid "Kiosk URL"
+msgstr "URL Kiosk"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Language select"
+msgstr "Chọn ngôn ngữ"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__write_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__write_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__write_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__write_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__theme__light
+msgid "Light"
+msgstr "Sáng"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__message
+msgid "Message"
+msgstr "Tin nhắn"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "No, thank you"
+msgstr "Không, cảm ơn"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__none
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__none
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__none
+msgid "None"
+msgstr "Không"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "Nothing, thanks."
+msgstr "Không, cảm ơn."
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_sms
+msgid "Notify by SMS"
+msgstr "Thông báo qua SMS"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_discuss
+msgid "Notify by discuss"
+msgstr "Thông báo qua thảo luận"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_email
+msgid "Notify by email"
+msgstr "Thông báo qua email"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__offer_drinks
+msgid "Offer Drinks"
+msgstr "Cung cấp đồ uống"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__optional
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__optional
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__optional
+msgid "Optional"
+msgstr "Tùy chọn"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Options"
+msgstr "Tùy chọn"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__organization_required
+msgid "Organization"
+msgstr "Tổ chức"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__pending
+msgid "Pending"
+msgstr "Đang chờ"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__phone_required
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__phone
+msgid "Phone"
+msgstr "Số điện thoại"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Please have a seat."
+msgstr "Xin mời ngồi."
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__drink
+msgid "Preferred Drink"
+msgstr "Đồ uống ưa thích"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/qr/qr.xml:0
+#, python-format
+msgid "QR Code"
+msgstr "Mã QR"
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Reporting
+msgid "Reporting"
+msgstr "Báo cáo"
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__required
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__required
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__required
+msgid "Required"
+msgstr "Bắt buộc"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__responsibles
+msgid "Responsibles"
+msgstr "Người phụ trách"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Side Message"
+msgstr "Tin nhắn bên"
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_stations
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__station
+msgid "Station"
+msgstr "Trạm"
+
+#. module: front_desk
+#: model:ir.model,name:front_desk.model_front_desk_station
+#: model:ir.ui.menu,name:front_desk.menu_Stations
+msgid "Stations"
+msgstr "Các trạm"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__name
+msgid "Stations Name"
+msgstr "Tên trạm"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__status
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Thank you for registering!"
+msgstr "Cảm ơn bạn đã đăng ký!"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__theme
+msgid "Theme"
+msgstr "Giao diện"
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.view_front_desk_checkin_report
+msgid "True"
+msgstr "Đúng"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_front_desk_checkin_report
+#: model:ir.ui.menu,name:front_desk.menu_front_desk_checkin_report
+#: model_terms:ir.ui.view,arch_db:front_desk.view_front_desk_checkin_report
+msgid "Visitor Check-In Report"
+msgstr "Báo cáo Check-In của khách"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__visitor_company
+msgid "Visitor Company"
+msgstr "Công ty của khách"
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_visitors
+#: model:ir.model,name:front_desk.model_front_desk_visitor
+#: model:ir.ui.menu,name:front_desk.menu_Visitors
+msgid "Visitors"
+msgstr "Khách tham quan"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/home/home.xml:0
+#, python-format
+msgid "Welcome to"
+msgstr "Chào mừng đến với"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#, python-format
+msgid "Who are you visiting?"
+msgstr "Bạn đang thăm ai?"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Who are you?"
+msgstr "Bạn là ai?"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Yes, please"
+msgstr "Vâng, xin vui lòng"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "You have been registered!"
+msgstr "Bạn đã được đăng ký!"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Name"
+msgstr "Tên của bạn"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Organization"
+msgstr "Tổ chức của bạn"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Phone Number"
+msgstr "Số điện thoại của bạn"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Your drink is on the way."
+msgstr "Đồ uống của bạn đang trên đường."
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "drink.name"
+msgstr "tên đồ uống"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "e.g. My Company"
+msgstr "ví dụ: Công ty của tôi"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "en"
+msgstr "en"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "fr"
+msgstr "fr"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "it"
+msgstr "it"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "ja"
+msgstr "ja"
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "vi"
+msgstr "vi"

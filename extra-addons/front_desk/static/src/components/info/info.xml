@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.info">
+
+        <div class="container min-vh-100 d-flex flex-column py-5">
+            <div class="row">
+                <div class="col-md-12 d-flex">
+                    <button class="btn btn-primary" type="button" t-on-click="switchToHome"> <i class="oi oi-arrow-left"></i> <t t-esc="state.translations.back"/></button>
+                </div>
+            </div>
+
+            <div class="row flex-grow-1 d-flex align-items-center justify-content-center m-5 p-5">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="fs-2 fw-bold"><t t-esc="state.translations.whoAreYou"/></h1>
+                    </div>
+                </div>
+
+                <div class="form-group row d-flex">
+                    <label><t t-esc="state.translations.yourName"/></label><br/>
+                    <input class="p-2 form-control" type="text" t-model="state.name" placeholder="Your Name"/>
+                </div>
+
+                <t t-if="state.phone_required!='none'">
+                    <div class="form-group row d-flex">
+                        <label><t t-esc="state.translations.yourPhoneNumber"/></label><br/>
+                        <input class="p-2 form-control" type="text" t-model="state.phone" placeholder="Your Phone Number"/>
+                    </div>
+                </t>
+
+                <t t-if="state.organization_required!='none'">
+                    <div class="form-group row d-flex">
+                        <label><t t-esc="state.translations.yourOrganization"/></label><br/>
+                        <input class="p-2 form-control" type="text" t-model="state.company" placeholder="e.g. My Company"/>
+                    </div>
+                </t>
+
+                <div class="form-group row d-flex">
+                    <h6 class="fw-normal p-1 text-danger"><t t-esc="state.error"/></h6>
+                </div>
+
+
+                <button class="btn btn-primary btn-lg" t-on-click="saveVisitorInfo"><t t-esc="state.translations.checkIn"/></button>
+
+<!--                <t t-if="state.host_selection">-->
+<!--                    <button class="btn btn-primary btn-lg" t-on-click="switchToHost">Check In</button>-->
+<!--                </t>-->
+
+<!--                <t t-if="! state.host_selection">-->
+<!--                    <button class="btn btn-primary btn-lg" t-on-click="switchToDrink">Check In</button>-->
+<!--                </t>-->
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </t>
+
+</templates>

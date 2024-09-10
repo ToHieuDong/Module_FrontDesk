@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="front_desk.app">
+
+
+        <t t-if="state.theme === 'dark'">
+            <div style="background-color: #202424; color: #ffffff;">
+                <t t-if="state.currentComponent === 'home'">
+                    <Home t-props="props, {switchToInfo: switchToInfo, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                    <t t-if="state.currentComponent === 'info'">
+                    <Info t-props="props, {switchToHome: switchToHome, switchToHost: switchToHost, switchToDrink: switchToDrink, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                    <t t-if="state.currentComponent === 'host'">
+                    <Host t-props="props, {switchToInfo: switchToInfo, switchToDrink: switchToDrink, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                    <t t-if="state.currentComponent === 'drink'">
+                    <Drink t-props="props, {switchToDrinkService: switchToDrinkService, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                    <t t-if="state.currentComponent === 'drinkservice'">
+                    <DrinkService t-props="props, {switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                    <t t-if="state.currentComponent === 'thankyou'">
+                    <ThankYou t-props="props, {switchToHome: switchToHome, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+            </div>
+        </t>
+
+        <t t-if="state.theme === 'light'">
+            <div>
+                <t t-if="state.currentComponent === 'home'">
+                    <Home t-props="props, {switchToInfo: switchToInfo, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                <t t-if="state.currentComponent === 'info'">
+                    <Info t-props="props, {switchToHome: switchToHome, switchToHost: switchToHost, switchToDrink: switchToDrink, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                <t t-if="state.currentComponent === 'host'">
+                    <Host t-props="props, {switchToInfo: switchToInfo, switchToDrink: switchToDrink, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                <t t-if="state.currentComponent === 'drink'">
+                    <Drink t-props="props, {switchToDrinkService: switchToDrinkService, switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                <t t-if="state.currentComponent === 'drinkservice'">
+                    <DrinkService t-props="props, {switchToThankYou: switchToThankYou, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+                <t t-if="state.currentComponent === 'thankyou'">
+                    <ThankYou t-props="props, {switchToHome: switchToHome, visitor_data: state.visitor_data, translations:state.translations}"/>
+                </t>
+            </div>
+        </t>
+
+
+    </t>
+
+</templates>

@@ -1,0 +1,572 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* front_desk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240721\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-09 19:03+0000\n"
+"PO-Revision-Date: 2024-09-09 19:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__authenticate_guest
+msgid "Authenticate Guest"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Back"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Check In"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.visitors_view
+msgid "Check out"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__check_in
+msgid "Check-In Time"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/home/home.xml:0
+#, python-format
+msgid "Check-in"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__checked_in
+msgid "Checked In"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__checked_out
+msgid "Checked Out"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#, python-format
+msgid "Choose a Host"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Close ("
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__company_id
+msgid "Company"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__create_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__create_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__create_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__create_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__theme__dark
+msgid "Dark"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__display_name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__display_name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Do you want something to drink?"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Drink
+msgid "Drink"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.drinks_form
+msgid "Drink Form"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__drink_image
+msgid "Drink Image"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__drink_name
+msgid "Drink Name"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__drink_served
+#: model_terms:ir.ui.view,arch_db:front_desk.visitors_view
+msgid "Drink Served"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_drink
+#: model:ir.model,name:front_desk.model_front_desk_drink
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__drinks
+msgid "Drinks"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.drinks_kanban_view
+msgid "Drinks Kanban"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__duration
+msgid "Duration (hours)"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__email_required
+msgid "Email"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "English"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Enter notes here..."
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "French"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_root
+msgid "FrontDesk"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Frontdesk Name"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__host
+msgid "Host"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__host_selection
+msgid "Host Selection"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "How can we delight you?"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__id
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__id
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__id
+msgid "ID"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Italian"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Japanese"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__kiosk_url
+msgid "Kiosk URL"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Language select"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__write_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__write_uid
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__write_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__write_date
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__theme__light
+msgid "Light"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__message
+msgid "Message"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_drink__name
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__name
+msgid "Name"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "No, thank you"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__none
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__none
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__none
+msgid "None"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "Nothing, thanks."
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_sms
+msgid "Notify by SMS"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_discuss
+msgid "Notify by discuss"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__notify_email
+msgid "Notify by email"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__offer_drinks
+msgid "Offer Drinks"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__optional
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__optional
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__optional
+msgid "Optional"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Options"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__organization_required
+msgid "Organization"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_visitor__status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__phone_required
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__phone
+msgid "Phone"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Please have a seat."
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__drink
+msgid "Preferred Drink"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/qr/qr.xml:0
+#, python-format
+msgid "QR Code"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.ui.menu,name:front_desk.menu_Reporting
+msgid "Reporting"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__email_required__required
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__organization_required__required
+#: model:ir.model.fields.selection,name:front_desk.selection__front_desk_station__phone_required__required
+msgid "Required"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__responsibles
+msgid "Responsibles"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.stations_view
+msgid "Side Message"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_stations
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__station
+msgid "Station"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model,name:front_desk.model_front_desk_station
+#: model:ir.ui.menu,name:front_desk.menu_Stations
+msgid "Stations"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__name
+msgid "Stations Name"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__status
+msgid "Status"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Thank you for resgistering!"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_station__theme
+msgid "Theme"
+msgstr ""
+
+#. module: front_desk
+#: model_terms:ir.ui.view,arch_db:front_desk.view_front_desk_checkin_report
+msgid "True"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "Vietnamese"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_front_desk_checkin_report
+#: model:ir.ui.menu,name:front_desk.menu_front_desk_checkin_report
+#: model_terms:ir.ui.view,arch_db:front_desk.view_front_desk_checkin_report
+msgid "Visitor Check-In Report"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.model.fields,field_description:front_desk.field_front_desk_visitor__visitor_company
+msgid "Visitor Company"
+msgstr ""
+
+#. module: front_desk
+#: model:ir.actions.act_window,name:front_desk.action_visitors
+#: model:ir.model,name:front_desk.model_front_desk_visitor
+#: model:ir.ui.menu,name:front_desk.menu_Visitors
+msgid "Visitors"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/home/home.xml:0
+#, python-format
+msgid "Welcome to"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/host/host.xml:0
+#, python-format
+msgid "Who are you visiting?"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Who are you?"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "Yes, please"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drink/drink.xml:0
+#, python-format
+msgid "You have been registered!"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Name"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Organization"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "Your Phone Number"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/thankyou/thankyou.xml:0
+#, python-format
+msgid "Your drink is on the way."
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/drinkservice/drinkservice.xml:0
+#, python-format
+msgid "drink.name"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/info/info.xml:0
+#, python-format
+msgid "e.g. My Company"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "en"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "fr"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "it"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "ja"
+msgstr ""
+
+#. module: front_desk
+#. odoo-javascript
+#: code:addons/front_desk/static/src/components/language/language.xml:0
+#, python-format
+msgid "vi"
+msgstr ""
